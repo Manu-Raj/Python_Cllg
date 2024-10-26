@@ -21,7 +21,7 @@ while True:
             print("NO Vehicles Available for Rent ")
 
     elif(ch==2):
-        num=int(input("Enter Vehicle Reg Num"))
+        num=int(input("Enter Vehicle Reg Num: "))
         for i,j,k in rec:
             if(i[1]==num):
                 print(f"Rent: {k[2]} per day")
@@ -29,16 +29,16 @@ while True:
                 print(f"Deposit: {k[4]}")
 
     elif(ch==3):
-        num=int(input("Enter Vehicle Reg Num"))
-        rent=int(input("Enter New Rent Value"))
-        e_rent=int(input("Enter New Extra Rent Value"))
-        dep=int(input("Enter New Deposit Value"))
+        num=int(input("Enter Vehicle Reg Num: "))
+        rent=int(input("Enter New Rent Value: "))
+        e_rent=int(input("Enter New Extra Rent Value: "))
+        dep=int(input("Enter New Deposit Value: "))
 
         for i,j,k in rec:
             if(i[1]==num):
-                j[2]=rent
-                j[3]=e_rent
-                j[4]=dep
+                k[2]=rent
+                k[3]=e_rent
+                k[4]=dep
                 print("Updated Succesfully")
                 break
         else:
@@ -46,7 +46,7 @@ while True:
             
     elif(ch==4):
         print("Calculating Rent based on Expected return")
-        num=int(input("Enter Vehicle Reg Num"))
+        num=int(input("Enter Vehicle Reg Num: "))
 
         for i,j,k in rec:
             if (i[1]==num):
@@ -55,7 +55,7 @@ while True:
                 print("Expected Amt: ",(exp_ret-borr).days*k[2])
 
     elif(ch==5):
-        num=int(input("Enter Vehicle Reg Num"))
+        num=int(input("Enter Vehicle Reg Num: "))
         
 
         now=datetime.now()
