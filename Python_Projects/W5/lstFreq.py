@@ -5,7 +5,7 @@ lst=[]
 for i in range(n):
     lst.append(input("Enter Element: "))
 
-least=[0,100]
+least=[0,len(lst)+1]
 
 for i in lst:
     if (lst.count(i)<least[1]):
