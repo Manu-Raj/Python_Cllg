@@ -11,8 +11,8 @@ for i in range(n):
 songs=lst+songs2
 print(songs)
 
-songs_NoDuplicates=set(songs)
-songs=list(songs_NoDuplicates)
+
+songs=list(set(songs))
 print(songs)
 
 
