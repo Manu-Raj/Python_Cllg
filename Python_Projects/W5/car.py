@@ -11,17 +11,22 @@ while True:
     print(options)
     ch=int(input("Enter Option: "))
     if(ch==1):
-        for i in rec:
-            print("Vehicle Type: ",i[0][0])
-            print("Vehicle Reg Num: ",i[0][1])
+        flag=0
+        for i,j,k in rec:
+            if(k[5]==False):
+                flag=1
+                print("Vehicle Type: ",i[0])
+                print("Vehicle Reg Num: ",i[1])
+        if(flag==0):
+            print("NO Vehicles Available for Rent ")
 
     elif(ch==2):
         num=int(input("Enter Vehicle Reg Num"))
         for i,j,k in rec:
             if(i[1]==num):
-                print(f"Rent: {j[2]} per day")
-                print(f"Extra Rent: {j[3]} per hour")
-                print(f"Deposit: {j[4]}")
+                print(f"Rent: {k[2]} per day")
+                print(f"Extra Rent: {k[3]} per hour")
+                print(f"Deposit: {k[4]}")
 
     elif(ch==3):
         num=int(input("Enter Vehicle Reg Num"))
@@ -58,6 +63,7 @@ while True:
 
         for i,j,k in rec:
             if (i[1]==num):
+                k[5]=False
                 borr=datetime.strptime(k[0],date_format)
                 exp_ret=datetime.strptime(k[1],date_format)
                 if(k[1]==now):
@@ -68,6 +74,7 @@ while True:
                     i_amt=t.days*k[2]+((datetime.strptime(now,date_format)-exp_ret).days*24)*k[3]
                     print("Expected Time Exceeded")
                     print("Amt to be Paid: ",i_amt)
+                
 
     elif(ch==6):
         break
