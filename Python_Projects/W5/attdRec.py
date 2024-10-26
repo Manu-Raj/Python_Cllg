@@ -17,7 +17,7 @@ print("Absent: ",abb)
 s_name=input("Enter Name of Student to Chk attendence: ")
 s_attd=input("Enter P or A: ")
 
-for i in range(len(attendence_Rec)-1):
+for i in range(len(attendence_Rec)):
     if attendence_Rec[i][0]==s_name:
         if attendence_Rec[i][1]==s_attd:
             print("Attendence Record is Correct")
