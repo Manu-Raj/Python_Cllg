@@ -12,7 +12,6 @@ sorted_lst_freq=sorted(freq.values())
 for x in sorted_lst_freq:
     for k,v in freq.items():
         if(v==x):
-            for i in range(x):
-                ans_lst.append(k)
+                ans_lst.extend([k]*x)
  
 print(ans_lst)
